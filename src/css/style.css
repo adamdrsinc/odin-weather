@@ -5,11 +5,10 @@
 }
 
 body{
-    min-height: 100vh;
-    max-width: 60vw;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 header,
@@ -33,24 +32,24 @@ footer{
 
 #content{
     flex: 1;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    justify-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     background-color: gray;
 }
 
 #searchbar{
+    flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 #searchbar input{
-    width: 35%;
     height: 4rem;
     border-radius: 12px;
     border: 3px solid black;
@@ -65,13 +64,14 @@ footer{
 }
 
 #main-details{
+    flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 #main-details-container{
-    width: 60%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -93,7 +93,7 @@ footer{
 }
 
 #location-details-container{
-        display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     align-items: center;
@@ -129,215 +129,57 @@ footer{
     font-size: 0.7em;
 }
 
-
-
-/**/
-
 #cards-container{
-}
+    --card-size: 200px;
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* *{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-
-body{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-header, footer{
-    min-height: 10vh;
-    display: flex;
-
-    background-color: rgb(53, 119, 119);
-}
-
-header{
-    align-items: center;
-    justify-content: space-between;
-}
-
-header .links{
-    display: flex;
-    gap: 48px;
-
-}
-
-header button{
-    font-size: 1.5rem;
-    background-color: transparent;
-    border: none;
-    padding: 8px 24px;
-    cursor: pointer;
-    color: black;
-    transition: color 0.3s ease;
-}
-
-header button:hover{
-    color: white;
-}
-
-footer{
-    justify-content: center;
-    padding: 24px;
-    gap: 48px;
-    align-items: start;
-}
-
-footer .col-group{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-footer button{
-    background-color: transparent;
-    border: none;
-    padding: 0px 24px;
-    font-size: 1.1rem;
-    color: black;
-    transition: color 0.3s ease;
-    cursor: pointer;
-}
-
-footer button:hover{
-    color: white;
-}
-
-#content{
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    background-color: aqua;
-
-    padding: 1vh;
-
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-size), 1fr));
+    grid-template-rows: 1fr;
+    grid-auto-rows: 1fr;
     gap: 32px;
+
+    padding: 16px 0;
 }
 
-#data-box{
-    min-width: 30vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    gap: 32px;
-}
-
-#searchbar{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
-}
-
-#searchbar input{
-    padding: 1vh 0.5vw;
-    min-width: 15vw;
-    border: 3px solid black;
-    border-radius: 16px;
-
-    font-size: 1.5rem;
-}
-
-#searchbar-icon{
-
-}
-
-#weather-details{
-    display: flex;
-    gap: 1vw;
-
-    align-items: center;
-    justify-content: space-around;
-
-    min-width: 100%;
-}
-
-#weather-icon{
-
-}
-
-#weather-data{
-    display: flex;
-    flex-direction: column;
-    text-align: end;
-}
-
-#selected-temperature-high{
-    font-size: 4rem;
-}
-
-#selected-temperature-low{
-    font-size: 3rem;
-}
-
-#selected-country{
-    font-size: 2rem;
-}
-
-#weather-carousel-container{
-    display: flex;
-    flex-wrap:nowrap;
-}
-
-.carousel-card{
-    display: flex;
-    flex-direction: column;
+.card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4px;
     background-color: white;
-    padding: 8px 16px;
     border: 2px solid black;
     border-radius: 12px;
-    gap: 12px;
+
+    min-height: var(--card-size);
+    min-width: var(--card-size);
 }
 
 .card-day{
+    grid-column: 1/3;
+    grid-row: 1/2;
     text-align: center;
-    font-size: 2rem;
+    align-self: center;
 }
 
-.card-grid{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    align-items: center;
-    justify-items: end;
-}
-.card-icon{
-    grid-column: 1/2;
-    grid-row: 1/3;
-    justify-self: center;
-}
 
 .card-temperature-high{
     grid-column: 2/3;
-    grid-row: 1/2;
-    font-size: 2.5rem;
+    grid-row: 2/3;
+    align-self: flex-end;;
 }
 
 .card-temperature-low{
     grid-column: 2/3;
-    grid-row: 2/3;
-    font-size: 2rem;
-} */
+    grid-row: 3/4;
+}
+
+.card-icon{
+    grid-column: 1/2;
+    grid-row: 2/4;
+    justify-self: center;
+    max-width: 50%;
+    max-height: 50%;
+    align-self: center;
+}
