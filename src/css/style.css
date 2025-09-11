@@ -6,6 +6,157 @@
 
 body{
     min-height: 100vh;
+    max-width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer{
+    min-height: 10vh;
+    background-color: lightblue;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+#content{
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+
+    background-color: gray;
+}
+
+#searchbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#searchbar input{
+    width: 35%;
+    height: 4rem;
+    border-radius: 12px;
+    border: 3px solid black;
+    padding: 0px 8px;
+    font-size: 2rem;
+}
+
+#searchbar img{
+    display: block;
+    width: 5vh;
+    height: 5vh;
+}
+
+#main-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-details-container{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+#main-details-icon{
+    display: block;
+    width: 13rem;
+    height: 13rem;
+    align-self: center;
+}
+
+#location-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#location-details-container{
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+}
+
+#location-temperature-high{
+    font-size: 11rem;
+    grid-column: 1/2;
+    grid-row:1/3;
+    margin-right: 16px;
+    text-align: end;
+}
+
+#location-temperature-low,
+#location-text{
+    text-align: start;
+    font-size: 4rem;
+}
+
+#location-temperature-low{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self:flex-end;
+}
+
+#location-text{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: flex-start;
+}
+
+.celsius{
+    font-size: 0.7em;
+}
+
+
+
+/**/
+
+#cards-container{
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     max-width: 1600px;
@@ -146,6 +297,11 @@ footer button:hover{
     font-size: 2rem;
 }
 
+#weather-carousel-container{
+    display: flex;
+    flex-wrap:nowrap;
+}
+
 .carousel-card{
     display: flex;
     flex-direction: column;
@@ -184,4 +340,4 @@ footer button:hover{
     grid-column: 2/3;
     grid-row: 2/3;
     font-size: 2rem;
-}
+} */

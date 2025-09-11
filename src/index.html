@@ -16,27 +16,39 @@
         </header>
         <div id="content">
             <div id="searchbar">
-                <input type="text" />
-                <img src="#" alt="d" id="searchbar-icon" />
+                <input type="text" name="location" id="input-location" />
+                <img src="./resource/img/magnify.svg" alt="I" />
             </div>
-            <div id="data-box">
-                <div id="weather-details">
-                    <img src="#" alt="d" id="weather-icon" />
-                    <div id="weather-data">
-                        <div id="selected-temperature-high">22*C</div>
-                        <div id="selected-temperature-low">18*C</div>
-                        <div id="selected-country">London</div>
+            <div id="main-details">
+                <div id="main-details-container">
+                    <img
+                        src="./resource/img/weather-sunny.svg"
+                        alt="I"
+                        id="main-details-icon"
+                    />
+                    <div id="location-details">
+                        <div id="location-details-container">
+                            <h2 id="location-temperature-high">
+                                22<span class="celsius">&#8451;</span>
+                            </h2>
+                            <h3 id="location-temperature-low">
+                                18<span class="celsius">&#8451;</span>
+                            </h3>
+                            <h3 id="location-text">London</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div id="weather-carousel-container">
-                <div class="carousel-card">
+            <div id="cards-container">
+                <div class="card">
                     <div class="card-day">Monday</div>
-                    <div class="card-grid">
-                        <div class="card-icon">Icon</div>
-                        <div class="card-temperature-high">22*C</div>
-                        <div class="card-temperature-low">18*C</div>
-                    </div>
+                    <img src="#" alt="" class="card-icon" />
+                    <h3 class="card-temperature-high">
+                        22<span class="celsius">&#8451;</span>
+                    </h3>
+                    <h4 class="card-temperature-low">
+                        18<span class="celsius">&#8451;</span>
+                    </h4>
                 </div>
             </div>
         </div>
