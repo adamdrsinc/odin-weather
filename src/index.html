@@ -7,8 +7,10 @@
     </head>
     <body>
         <header>
-            <div class="logo">Header Logo</div>
-            <div class="links">
+            <div>
+                <img src="./resource/img/odin-logo.png" alt="" class="logo" />
+            </div>
+            <div id="header-links">
                 <button>Link 1</button>
                 <button>Link 2</button>
                 <button>Link 3</button>
@@ -26,23 +28,23 @@
                         alt="I"
                         id="main-details-icon"
                     />
-                    <div id="location-details">
-                        <div id="location-details-container">
-                            <h2 id="location-temperature-high">
-                                22<span class="celsius">&#8451;</span>
-                            </h2>
-                            <h3 id="location-temperature-low">
-                                18<span class="celsius">&#8451;</span>
-                            </h3>
-                            <h3 id="location-text">London</h3>
-                        </div>
-                    </div>
+                    <h2 id="location-temperature-high">
+                        22<span class="celsius">&#8451;</span>
+                    </h2>
+                    <h3 id="location-temperature-low">
+                        18<span class="celsius">&#8451;</span>
+                    </h3>
+                    <h3 id="location-text">London</h3>
                 </div>
             </div>
             <div id="cards-container">
                 <div class="card">
-                    <div class="card-day">Monday</div>
-                    <img src="#" alt="img" class="card-icon" />
+                    <h3 class="card-day">Monday</h3>
+                    <img
+                        src="./resource/img/weather-sunny.svg"
+                        alt="img"
+                        class="card-icon"
+                    />
                     <h3 class="card-temperature-high">
                         22<span class="celsius">&#8451;</span>
                     </h3>
@@ -143,13 +145,17 @@
             </div>
         </div>
         <footer>
-            <div class="logo">Footer Logo</div>
-            <div class="col-group">
-                <button>Link 1</button>
-                <button>Link 2</button>
-            </div>
-            <div class="col-group">
-                <button>Link 3</button>
+            <div id="footer-content">
+                <div>
+                    <img src="./resource/img/odin-logo.png" alt="" class="logo" />
+                </div>
+                <div class="footer-group">
+                    <button>Link 1</button>
+                    <button>Link 2</button>
+                </div>
+                <div class="footer-group">
+                    <button>Link 3</button>
+                </div>
             </div>
         </footer>
     </body>
