@@ -102,7 +102,6 @@ class UIHandler {
     }
 
     static setIcon(element, iconChoice) {
-        console.log(weatherIcons);
         const icons = {
             cloudy: weatherCloud,
             "partly-cloudy-day": weatherPartCloud,
