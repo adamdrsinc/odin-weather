@@ -37,8 +37,10 @@ class WeatherInterfacer {
 
             const data = await response.json();
 
+            console.log(data);
+
             const dataToPublish = {
-                address: data.address,
+                resolvedAddress: data.resolvedAddress,
                 days: data.days,
                 currentConditions: data.currentConditions,
             };

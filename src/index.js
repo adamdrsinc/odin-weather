@@ -5,4 +5,6 @@ import { UIHandler } from "./UIHandler.js";
 (() => {
     UIHandler.init();
     WeatherInterfacer.init();
+
+    WeatherInterfacer.getData("London");
 })();

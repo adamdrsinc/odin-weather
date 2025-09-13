@@ -179,6 +179,8 @@ footer{
     grid-template-rows: 1fr 1fr;
     justify-items: center;
     align-items: center;
+    text-align: center;
+
 }
 
 #main-details-icon{
@@ -233,13 +235,16 @@ footer{
 }
 
 .card{
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
 
-    background-color: white;
+    padding: 16px;
+
+    background-color: rgb(170, 212, 231);
     border: 2px solid black;
     border-radius: 12px;
 
