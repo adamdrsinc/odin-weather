@@ -9,8 +9,11 @@ class UIHandler {
     //Subscribers
     static addAllSubscribers() {
         PubSub.subscribe(PubSubConsts.DATA_PUBLISHED, (message, data) => {
-            console.log(data);
-            this.uiOnDataSubscriptionUpdate(data);
+            if (Object.keys(data).length === 0) {
+                this.displayGetLocationError();
+            } else {
+                this.uiOnDataSubscriptionUpdate(data);
+            }
         });
     }
 
@@ -22,6 +25,8 @@ class UIHandler {
     static addSearchButtonListener() {
         const searchButton = document.getElementById("search-button");
         searchButton.addEventListener("click", (e) => {
+            document.getElementById("error-box").className = "";
+
             const locationInput = document.getElementById("input-location");
             PubSub.publish(PubSubConsts.NEW_SEARCH, {
                 location: locationInput.value,
@@ -57,6 +62,11 @@ class UIHandler {
     }
 
     static uiUpdateDays(days) {}
+
+    static displayGetLocationError() {
+        const errorBoxEl = document.getElementById("error-box");
+        errorBoxEl.classList.add("visible-flex");
+    }
 }
 
 export { UIHandler };

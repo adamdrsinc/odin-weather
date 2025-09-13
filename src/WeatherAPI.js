@@ -14,33 +14,39 @@ class WeatherInterfacer {
     }
 
     static async getData(location, startDate = "", endDate = "") {
-        let completeURL = this.#BASE_URL;
+        try {
+            let completeURL = this.#BASE_URL;
 
-        location = location.toLowerCase();
-        completeURL += `${location}`;
+            location = location.toLowerCase();
+            completeURL += `${location}`;
 
-        if (startDate) {
-            completeURL += `/${startDate}`;
-            if (endDate) {
-                completeURL += `/${endDate}`;
+            if (startDate) {
+                completeURL += `/${startDate}`;
+                if (endDate) {
+                    completeURL += `/${endDate}`;
+                }
             }
+
+            const response = await fetch(`${completeURL}?key=${API_KEY}`);
+
+            if (!response.ok) {
+                throw new Error(
+                    `Error: ${response.status} ${response.statusText}`
+                );
+            }
+
+            const data = await response.json();
+
+            const dataToPublish = {
+                address: data.address,
+                days: data.days,
+                currentConditions: data.currentConditions,
+            };
+
+            PubSub.publish(PubSubConsts.DATA_PUBLISHED, dataToPublish);
+        } catch (error) {
+            PubSub.publish(PubSubConsts.DATA_PUBLISHED, {});
         }
-
-        const response = await fetch(`${completeURL}?key=${API_KEY}`);
-
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-
-        const data = await response.json();
-
-        const dataToPublish = {
-            address: data.address,
-            days: data.days,
-            currentConditions: data.currentConditions,
-        };
-
-        PubSub.publish(PubSubConsts.DATA_PUBLISHED, dataToPublish);
     }
 }
 
