@@ -20,7 +20,11 @@
         <div id="content">
             <div id="searchbar">
                 <input type="text" name="location" id="input-location" />
-                <img src="./resource/img/magnify.svg" alt="I" />
+                <img
+                    src="./resource/img/magnify.svg"
+                    alt="I"
+                    id="search-button"
+                />
             </div>
             <div id="main-details">
                 <div id="main-details-container">
@@ -29,11 +33,14 @@
                         alt="I"
                         id="main-details-icon"
                     />
-                    <h2 id="location-temperature-high">
-                        22<span class="celsius">&#8451;</span>
+                    <h2 id="location-temperature-current">
+                        20<span class="celsius">&#8451;</span>
                     </h2>
+                    <h3 id="location-temperature-high">
+                        Hi: 22<span class="celsius">&#8451;</span>
+                    </h3>
                     <h3 id="location-temperature-low">
-                        18<span class="celsius">&#8451;</span>
+                        Lo: 18<span class="celsius">&#8451;</span>
                     </h3>
                     <h3 id="location-text">London</h3>
                 </div>
