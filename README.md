@@ -11,7 +11,7 @@ The following items are retrieved for use:
 - Min Temp
 - Current Temp
 - Address
-- Forecase for the next 10 days
+- Forecast for the next 10 days
 
 ## Languages
 - HTML
